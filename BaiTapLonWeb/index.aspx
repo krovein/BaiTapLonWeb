@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="nhom">
-        <div class="tieudenhom">Tin tức - sự kiện</div>
+        <div class="tieudenhom">Tin tức sự kiện</div>
         <div class="danhsachchude">
             <asp:DataList ID="dtladmin" runat="server" RepeatColumns="7">
                 <ItemTemplate>
