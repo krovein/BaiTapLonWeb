@@ -1,0 +1,111 @@
+﻿* {
+    padding:0;margin:0;
+}
+header, nav, footer,section {
+    display:block;
+}
+body {
+    font-family:Tahoma;
+    color:#d8d8d8;
+    background:#CCFF99;
+}
+.container {
+    width:960px;
+    height:auto;
+    margin:auto;
+}
+header {
+    float:left;
+    width:100%;
+    height:90px;
+    background:#CCFF99;
+    text-align:center;
+    line-height:90px;
+    color:#f60;
+}
+nav {
+    float:left;
+    width:100%;
+    height:45px;
+    line-height:45px;
+    border-bottom:1px solid #f60;
+    background-color:#444;
+    box-sizing:border-box;
+    border-left:5px solid #222;
+    border-right:5px solid #222;
+    position:relative;
+            
+}
+    nav ul {
+                
+    }
+        nav ul li {
+            list-style:none;
+            float:left;
+        }
+            nav a {
+                text-decoration:none;
+                color:#f60;
+                padding:0 10px;
+                display:block;
+                font-size:16px;
+            }
+                nav a.bordertrai {
+                    border-left:1px dashed #f60;
+                }
+                nav a:hover {
+                    background-color:#f60;
+                    color:#fff;
+                }
+.vebenphai {
+    float:right;
+}
+.content {
+    background-color:#333;
+    float:left;
+    width:100%;
+    height:auto;
+    padding:15px 0 0 0;
+    font-size:14px;
+}
+    .content section {
+        width:100%;
+        height:auto;
+        float:left;
+        margin-top:15px;
+    }
+
+footer {
+    height:45px;
+    width:100%;
+    float:left;
+    background-color:#444;
+    line-height:45px;
+    box-sizing:border-box;
+    padding:0 10px;
+}
+    footer a {
+        text-decoration:none;
+        color:#d8d8d8;
+        padding:10px;   
+        font-size:14px;      
+    }
+        footer a:hover {
+            color:#f60;
+        }
+         .search {
+            top:45px;
+            position:absolute;
+            right:0;
+        }
+        .btnsearch,.txtsearch{
+            float:left;
+            padding:7px 5px;
+            background-color:#444;
+            color:#d8d8d8;
+            border:0px;
+        }
+        .txtsearch {
+            border-right:1px solid #555;
+            border-bottom-left-radius:5px;
+        }

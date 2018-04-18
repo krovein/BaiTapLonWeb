@@ -1,0 +1,10 @@
+﻿.bang{
+    width: auto;
+    margin:auto;
+    text-align:center;
+}
+.bang tr {
+}
+    .bang tr td {
+        padding:10px;
+    }

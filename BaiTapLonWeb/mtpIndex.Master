@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mtpIndex.Master.cs" Inherits="BaiTapLonWeb.Masterpage2" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/control.css" rel="stylesheet" />
+    <link href="css/linkbaiviet.css" rel="stylesheet" />
+    <script>
+        function hoidangxuat() {
+            var chon = confirm('Bạn thật sự muốn thoát?');
+            if (chon == true) {
+                window.location = "dangxuat.aspx";
+            }
+        }
+    </script>
+    <style>
+        .sapxep {
+            float:right;
+            padding-left:15px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+<div class="container">
+    <header><h1>Diễn đàn thảo luận</h1></header>
+    <nav>
+        <ul>
+            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/index.aspx" Text="Trang chủ"></asp:HyperLink></li>
+            <li>
+                <asp:HyperLink ID="itemmenuvietbaimoi" runat="server" Text="Viết Bài Mới" NavigateUrl="~/vietbaimoi.aspx"></asp:HyperLink></li>
+        </ul>
+        <asp:HyperLink ID="dangnhap_dangxuat" runat="server" CssClass="vebenphai" NavigateUrl="~/dangnhap.aspx">Đăng nhập</asp:HyperLink>
+        <asp:HyperLink ID="dangky_hoso" runat="server" CssClass="vebenphai" NavigateUrl="~/dangky.aspx">Đăng ký</asp:HyperLink>
+        <div class="search"><asp:TextBox ID="txtsearch" runat="server" CssClass="txtsearch"></asp:TextBox><asp:Button ID="btnsearch" runat="server" Text="Tìm kiếm" CssClass="btnsearch" OnClick="btnsearch_Click" /></div>
+    </nav>
+    <div class="content">
+        <center><asp:Label ID="lblloichao" runat="server" Text="Label">Đây là lable</asp:Label></center>
+        <section>
+            <div class="nhom baivietmoi">
+                <div class="tieudenhom">Bài Viết Mới
+                    <asp:DropDownList ID="ddlsobaiviet" runat="server" AutoPostBack="true" CssClass="ddl" OnSelectedIndexChanged="ddlsobaiviet_SelectedIndexChanged">
+                        <asp:ListItem>10</asp:ListItem>
+                        <asp:ListItem>20</asp:ListItem>
+                        <asp:ListItem>30</asp:ListItem>
+                    </asp:DropDownList>
+                    <div class="sapxep">
+                        Sắp xếp theo
+                        <asp:DropDownList ID="ddlsapxep" runat="server" CssClass="ddl" AutoPostBack="True" OnSelectedIndexChanged="ddlsapxep_SelectedIndexChanged">
+                            <asp:ListItem>Mới nhất</asp:ListItem>
+                            <asp:ListItem>A-Z</asp:ListItem>
+                            <asp:ListItem>Z-A</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="danhsachbaiviet">
+                    <asp:DataList ID="dtlbaivietmoi" runat="server" Width="960px">
+                        <ItemTemplate>
+                            <div class="linkbaiviet">
+                                <asp:HyperLink ID="HyperLink2" runat="server" Text='<%#Bind("sTieudebaiviet") %>' CssClass="tieudelinkbaiviet" NavigateUrl='<%# "~/baiviet.aspx?idbaiviet=" + Eval("ID_iMabaiviet")%>'></asp:HyperLink>
+                                <asp:Label ID="Label1" runat="server" Text='<%#Eval("dtThoigiandang") %>' CssClass="thoigiandang"></asp:Label>
+                                <asp:HyperLink ID="HyperLink8" runat="server" Text='<%#Eval("ID_sTentaikhoan") %>' CssClass="nguoidang" NavigateUrl='<%# "~/hoso.aspx?id=" + Eval("ID_sTentaikhoan")%>'></asp:HyperLink>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+    <footer>
+        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/gioithieu.aspx">Giới thiệu</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/dieukhoansudung.aspx">Điều khoản sử dụng</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/hotrovalienhe.aspx">Hỗ trợ và liên hệ</asp:HyperLink>
+        <div class="vebenphai" style="font-size:12px">
+            <asp:Label ID="Label2" runat="server" Text="Online/Đã truy cập: "></asp:Label>
+            <asp:Label ID="lblonline" runat="server" Text="Online"></asp:Label><asp:Label ID="Label1" runat="server" Text="/" Enabled="False"></asp:Label><asp:Label ID="lbldatruycap" runat="server" Text="Đã truy cập"></asp:Label>
+        </div>
+    </footer>
+</div>
+</form>
+</body>
+</html>
