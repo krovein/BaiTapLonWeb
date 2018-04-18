@@ -102,12 +102,12 @@ namespace BaiTapLonWeb
             }
             if (rdbtnco.Checked)
             {
-                //if (fupload.FileName.Equals(""))
-                //{
-                //    Response.Write("<script>alert('Bạn chưa chọn file');</script>");
-               // }
-                //else
-                //{
+                if (fupload.FileName.Equals(""))
+                {
+                    Response.Write("<script>alert('Bạn chưa chọn file');</script>");
+                }
+                else
+                {
                     string filename = "";
                     string filepath = "";
                     string imagepath = ConfigurationManager.AppSettings["fileuploadpath"];
@@ -130,7 +130,7 @@ namespace BaiTapLonWeb
                     {
                         Response.Redirect("index.aspx");
                     }
-                //}
+                }
             }
             else
             {
