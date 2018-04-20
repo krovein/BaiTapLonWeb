@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +60,7 @@
     <Content Include="images\1.jpg" />
     <Content Include="images\logophp.png" />
     <Content Include="images\noavatar.png" />
+    <Content Include="quanlychude.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -172,6 +175,13 @@
     </Compile>
     <Compile Include="baiviet.aspx.designer.cs">
       <DependentUpon>baiviet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="quanlychude.aspx.cs">
+      <DependentUpon>quanlychude.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="quanlychude.aspx.designer.cs">
+      <DependentUpon>quanlychude.aspx</DependentUpon>
     </Compile>
     <Compile Include="suathongtintaikhoan.aspx.cs">
       <DependentUpon>suathongtintaikhoan.aspx</DependentUpon>

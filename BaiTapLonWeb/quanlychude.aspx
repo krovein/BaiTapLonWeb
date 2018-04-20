@@ -7,10 +7,28 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
         <div>
-            <asp:GridView ID="grdV" runat="server">
-
+            <%--OnRowUpdating="gridAge_RowUpdating"--%>
+            <asp:GridView ID="grdV" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_sMachude"  ShowFooter="true" >
+                <Columns>
+                    <asp:TemplateField HeaderText="Mã chủ đề">
+                        <ItemTemplate>
+                            <%# Eval("ID_sMachude")%>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Tên chủ đề">
+                        <ItemTemplate>
+                            <%# Eval("sTenchude")%>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Mã nhóm chủ đề">
+                        <ItemTemplate>
+                            <%# Eval("FK_iManhomchude")%>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:CommandField ShowEditButton="True" ButtonType="Button" ControlStyle-CssClass="buttonSetting" />
+                </Columns>
             </asp:GridView>
         </div>
     </form>
