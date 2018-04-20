@@ -31,6 +31,7 @@
             <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/index.aspx" Text="Trang chủ"></asp:HyperLink></li>
             <li>
                 <asp:HyperLink ID="itemmenuvietbaimoi" runat="server" Text="Viết Bài Mới" NavigateUrl="~/vietbaimoi.aspx"></asp:HyperLink></li>
+            <li>     <asp:HyperLink ID="HyperLink2" runat="server" Text="Quản lý chủ đề" NavigateUrl="~/quanlychude.aspx"></asp:HyperLink></li>
         </ul>
         <asp:HyperLink ID="dangnhap_dangxuat" runat="server" CssClass="vebenphai" NavigateUrl="~/dangnhap.aspx">Đăng nhập</asp:HyperLink>
         <asp:HyperLink ID="dangky_hoso" runat="server" CssClass="vebenphai" NavigateUrl="~/dangky.aspx">Đăng ký</asp:HyperLink>
