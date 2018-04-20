@@ -119,6 +119,16 @@ namespace BaiTapLonWeb
                     }
                     SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["strdbmpm"].ToString());
                     cnn.Open();
+                    string querytext = "select * from tblBaiviet where sTieudebaiviet = '" + tieudebaiviet + "'";
+                    SqlCommand cmd1 = new SqlCommand(querytext,cnn);
+                    var rd=cmd1.ExecuteReader();
+                    if (rd.HasRows)
+                    {
+                        Response.Write("<script>alert('Tiêu đề bài viết đã tồn tại!, vui lòng nhập lại')</script>");
+                        cnn.Close();
+                        return;
+                    }
+
                     SqlCommand cmd = new SqlCommand("insert into tblBaiviet(sTieudebaiviet,sNoidungbaiviet,FK_sMachude,sLinktai,dtThoigiandang,FK_sTentaikhoan,iDuyet) values (N'" + tieudebaiviet + "',N'" + noidungbaiviet + "','" + machude + "','" + filename + "','" + DateTime.Now.ToString() + "','" + Session["taikhoan"] + "',"+iduyet+")", cnn);
                     cmd.ExecuteNonQuery();
                     cnn.Close();
@@ -136,6 +146,16 @@ namespace BaiTapLonWeb
             {
                 SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["strdbmpm"].ToString());
                 cnn.Open();
+                string querytext = "select * from tblBaiviet where sTieudebaiviet = '" + tieudebaiviet+"'";
+                SqlCommand cmd1 = new SqlCommand(querytext,cnn);
+                
+                var rd = cmd1.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    Response.Write("<script>alert('Tiêu đề bài viết đã tồn tại!, vui lòng nhập lại')</script>");
+                    cnn.Close();
+                    return;
+                }
                 string strcmd = "insert into tblBaiviet(sTieudebaiviet,sNoidungbaiviet,FK_sMachude,dtThoigiandang,FK_sTentaikhoan,iDuyet) values (N'" + tieudebaiviet + "',N'" + noidungbaiviet + "','" + machude + "','" + DateTime.Now.ToString() + "','" + Session["taikhoan"].ToString() + "'," + iduyet + ")";
                 SqlCommand cmd = new SqlCommand(strcmd, cnn);
                 try
